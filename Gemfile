@@ -11,10 +11,17 @@ gem 'mongoid'
 gem 'bson_ext', :require => "mongo"
 
 # Test requirements
-gem 'rspec', :require => "spec", :group => "test"
-gem 'capybara', :group => "test"
-gem 'cucumber', :group => "test"
-gem 'rack-test', :require => "rack/test", :group => "test"
+group :test do
+  gem "rspec-core"
+  gem "rspec-expectations"
+  gem "rspec-mocks"
+  gem 'cucumber'
+  gem 'capybara'
+  gem 'rack-test', :require => 'rack/test', :group => 'test'
+  gem 'autotest'
+  gem 'autotest-fsevent'
+end
+
 
 
 # Padrino
