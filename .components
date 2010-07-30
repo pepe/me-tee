@@ -1,7 +1,7 @@
 --- 
-:test: rspec
-:script: none
 :renderer: haml
-:orm: none
+:test: cucumber
+:orm: mongoid
+:script: jquery
 :stylesheet: sass
 :mock: none
