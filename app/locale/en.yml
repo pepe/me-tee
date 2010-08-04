@@ -1,0 +1,74 @@
+en:
+  app:
+    design_restored: "Your design has been restored"
+    title: me-tee t-shirt about you
+    design_stored: "<a href='/%s'>This</a> is a webpage containing Your stored design. Save the url for further visit."
+    business_conditions: "Business conditions"
+    how_to_buy: "How to buy"
+    contact: "Contact us"
+    privacy: "Privacy"
+
+  icon:
+    name: name
+    chosen_hobby: Chosen hobby %s
+    chosen_job: Chosen job %s
+    chosen_face: Chosen face %s
+    hobbies: Images hobbies
+    faces: Images faces
+    jobs: Images jobs
+
+  tshirt:
+    size: size
+    price: Price CZK %s
+    change_size: change size
+    how_you_designed: Tee how you designed it
+    chosen_gender_size: You chose %s tee in size %s
+    chosen_gender: You chose %s tee
+    chosen_size: You chose size %s
+    chosen_icons: You chose icons
+    how_was_designed: Tee how was designed
+    was_chosen_gender_size: You chose %s tee in size %s
+    was_chosen_icons: Customer chose icons
+
+  order:
+    recapitulation: Order summary
+    contact_form: Contact form
+    name: Name
+    street: Street
+    city: City
+    zip: ZIP
+    email: Email
+    phone: Phone
+    note: Note
+    coupon: Coupon
+    confirm: Confirm
+    transport_czech_post: Transport - Czech Post CZK %s
+    total_price: Total price CZK %s
+    address: Address
+    transport: Transport
+    transport_info: Tee will be expeded next Friday and will be delivered to you using Czech Post. Transport costs CZK %s.
+    payment: Payment
+    transport_payment: Transport &amp; Payment
+    payment_info: We accept bank transfer payments.
+    confirmation_info: Clicking on link ORDER CONFIRMATION, you agree with bussiness conditions of me-tee service and mandate order how you designed and configured.
+    confirmation: ORDER CONFIRMATION
+    permalink: Order permalink
+    errors:
+      email: Email is empty or in bad format
+      empty_email: Email is empty
+      bad_email: Email is in bad format
+      all_three_required: All three icons must be choosed
+
+  gender:
+    male: male
+    female: female
+
+  commands:
+    save: save
+    back: back
+    random: random
+    order: order
+
+  mail:
+    subject: Your order of me-tee was succesful
+    body: You can always see what happened here %s.

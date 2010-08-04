@@ -1,0 +1,32 @@
+%html
+  %head
+    %title=I18n.t('app.title')
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}
+    %script{ 'type' => 'text/javascript', 'src' => '/javascripts/jquery-1.3.2.min.js'}
+    %script{ 'type' => 'text/javascript', 'src' => '/javascripts/jquery.pngFix.pack.js'}
+    %script{ 'type' => 'text/javascript', 'src' => '/javascripts/jquery.jcarousel.js'}
+    %script{ 'type' => 'text/javascript', 'src' => '/javascripts/jquery.prettyPhoto.js'}
+    %script{ 'type' => 'text/javascript', 'src' => '/javascripts/application.js'}
+    %link{ 'rel' => 'stylesheet' , 'href' => '/stylesheets/screen.css' , 'media' => 'screen' , 'type' => 'text/css'}
+    %link{ 'rel' => 'stylesheet' , 'href' => '/stylesheets/jquery.jcarousel.css' , 'media' => 'screen' , 'type' => 'text/css'}
+    %link{ 'rel' => 'stylesheet' , 'href' => '/stylesheets/prettyPhoto.css' , 'media' => 'screen' , 'type' => 'text/css'}
+    %link{ 'rel' => 'shortcut icon' , 'href' => 'favicon.ico' }
+  %body
+    #container
+      = yield
+    #footer
+      %a{:href => '/how-to-buy?iframe=true&width=600&height=400', :rel => 'lightbox[footnavig]', :title => I18n.t('app.how_to_buy')}=I18n.t('app.how_to_buy')
+      %a{:href => '/transport-payment?iframe=true&width=600&height=400', :rel => 'lightbox[footnavig]', :title => I18n.t('order.transport_payment')}=I18n.t('order.transport_payment')
+      %a{:href => '/business-conditions?iframe=true&width=600&height=400', :rel => 'lightbox[footnavig]', :title => I18n.t('app.business_conditions')}=I18n.t('app.business_conditions')
+      %a{:href => '/privacy?iframe=true&width=600&height=400', :rel => 'lightbox[footnavig]', :title => I18n.t('app.privacy')}=I18n.t('app.privacy')
+      %a{:href => '/contact?iframe=true&width=600&height=400', :rel => 'lightbox[footnavig]', :title => I18n.t('app.contact')}=I18n.t('app.contact')
+    %script(type="text/javascript")
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    %script(type="text/javascript")
+      try {
+      var pageTracker = _gat._getTracker("UA-3779611-4");
+      pageTracker._trackPageview();
+      } catch(err) {}
+      
+    

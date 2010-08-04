@@ -1,0 +1,62 @@
+%a{:href => '/locale/en', :title => 'english'}
+  %img{:src => '/images/en.gif'}
+%span &nbsp;
+%a{:href => '/locale/cs', :title => 'czech'}
+  %img{:src => '/images/cz.gif'}
+- if @message
+  %div#message= @message 
+%p#variants
+  %a{'href' => '/male', 'class' => 'male-btn male-figure', :title => I18n.t('gender.male')}
+    %span= I18n.t('gender.male')
+  %a{'href' => '/female', 'class' => 'male-btn female-figure', :title => I18n.t('gender.female')}
+    %span= I18n.t('gender.female')
+
+%form{:action => '/order', :method => 'post'}
+  %select{:id => 'size', :name => 'size', :class => 'size-select'}
+    - %w{S M L XL XXL}.each do |size|
+      = option_for size
+  %p#order
+    %input{:type => 'submit', 'class' => 'foldpack-btn square-btn-submit', 'value' => I18n.t('commands.order')}
+
+%p#commands
+  %a{'href' => '/save', 'class' => 'square-btn save-btn', 'title' => I18n.t('commands.save')}
+    %span= I18n.t('commands.save')
+  %a{'href' => '/random', 'class' => 'square-btn random-btn', 'title' => I18n.t('commands.random')}
+    %span= I18n.t('commands.random')
+
+%p#price
+  =I18n.t('tshirt.price') % 350
+
+%div#builder
+  %div#placeholders
+    %div{:class => 'placeholder', :id => 'hobbies-placeholder'}
+      =chosen_icon_image('hobbies')
+    %div{:class => 'placeholder', :id => 'faces-placeholder'}
+      =chosen_icon_image('faces')
+    %div{:class => 'placeholder', :id => 'jobs-placeholder'}
+      =chosen_icon_image('jobs')
+      
+  %div#carousels
+    %div.carousel-container
+      %img{:src => '/images/carousel_top_arrow.gif', :class => 'hobbies-carousel-arrow', :alt => ''}
+      %img{:src => '/images/carousel_top_arrow.gif', :class => 'faces-carousel-arrow', :alt => ''}
+      %img{:src => '/images/carousel_top_arrow.gif', :class => 'jobs-carousel-arrow', :alt => ''}
+      %div#hobbies-carousel-container
+        %ul{:id => 'hobbies-carousel'}
+          - Icon.hobbies.each do |icon| 
+            %li= icon_image_thumb(icon) 
+      %div#faces-carousel-container
+        %ul{:id => 'faces-carousel'}
+          - Icon.faces.each do |icon| 
+            %li= icon_image_thumb(icon)
+      %div#jobs-carousel-container
+        %ul{:id => 'jobs-carousel'}
+          - Icon.jobs.each do |icon| 
+            %li= icon_image_thumb(icon) 
+      %h3{:id => 'hobbies-carousel-title'}=I18n.t('icon.hobbies')
+      %h3{:id => 'faces-carousel-title'}=I18n.t('icon.faces')
+      %h3{:id => 'jobs-carousel-title'}=I18n.t('icon.jobs')
+-if @beta_box
+  %a{:href => '/intro?iframe=true&width=600&height=400', :id => 'startup', :rel => 'lightbox[footnavig]', :title => I18n.t('app.intro'), :class => 'hidden'}
+
+

@@ -1,0 +1,387 @@
+@import base.sass
+
+=transparent
+  :filter alpha(opacity=80)
+  :-moz-opacity 0.8
+  :-khtml-opacity 0.8
+  :opacity 0.8
+
+=rounded(!radius = 4px)  
+  :border-radius= !radius  
+  :-moz-border-radius= !radius  
+  :-webkit-border-radius= !radius
+
+=innershadow
+  :text-shadow #000 -1px -1px 0px
+
+=innerlight
+  :text-shadow #fff -1px -1px 0px
+
+=outerlight
+  :text-shadow #ddd 1px 1px 1px
+
+=outershadow
+  :text-shadow #333 1px 1px 1px
+
+=noshadow
+  :text-shadow none
+
+body
+  +blueprint-typography-body
+  :color= !font_color
+  :background
+    :image url('/images/male_bg.jpg')
+    :repeat no-repeat
+    :position top center
+    :color #000
+  :text-align center
+  +innershadow
+
+h1
+  :font-size 250%
+  :line-height 100%
+  :font-weight bold
+  :color= !dark_font_color
+  +outershadow
+h2
+  :font-size 160%
+  :font-weight bold
+  :color= !dark_font_color
+  +outershadow
+h3
+  :font
+    :size 150%
+    :weight bold
+  :margin
+    :bottom 5px
+    :top 5px
+  :color #ba842a
+  :line-height 100%
+
+
+#container
+  +container
+  :text-align left
+  :height 980px
+
+#footer
+  :z-index 100
+  :position fixed
+  :bottom -8px
+  :width 100%
+  :padding
+    :top 5px
+  :height 30px
+  :background-color #26130d
+  :opacity 0.8
+  :filter alpha(opacity=80)
+  +rounded(8)
+  a
+    :color white
+    :margin
+      :left 10px
+      :right 10px
+  a:hover
+    :color #ddd
+
+#message
+  :position fixed
+  :top -8px
+  :width 910px
+  :height 23px
+  :padding 13px 20px
+  :background-color #26130d
+  :opacity 0.6
+  :filter alpha(opacity=60)
+  :font-size 120%
+  +rounded(8)
+
+a.square-btn
+  :display block
+  :position absolute
+  :width 57
+  :height 57
+  :text-decoration none
+  span
+    :color #ccc
+    :display block
+    :width 100%
+    :text-align center
+    :margin-top -20px
+  
+
+a.square-btn:hover
+  :background
+    :image url('/images/square_btn_bg.png')
+    :repeat no-repeat
+    :position top left
+  span
+    :color #9c520b
+
+
+.square-btn-submit
+  :background transparent
+  :border none
+  :display block
+  :position absolute
+  :width 57px
+  :text-decoration none
+  :vertical-align top
+  :padding
+    :top 2px
+    :bottom 59px
+  :color #ccc
+  :cursor pointer
+  
+.square-btn-submit-hover
+  :background
+    :image url('/images/square_btn_bg.png')
+    :repeat no-repeat
+    :position bottom center
+  :color #9c520b
+
+.foldpack-btn
+  :margin-left 761px
+  :top 153px
+  
+.checkout-btn
+  :margin-left 558px
+  :top 154px
+
+
+.save-btn
+  :margin-left 132px
+  :top 143px
+
+.random-btn
+  :margin-left 132px
+  :top 233px
+
+a.male-btn
+  :display block
+  :position absolute
+  :width 43
+  :height 73
+  :text-decoration none
+  span
+    :color white
+    :display block
+    :width 100%
+    :text-align center
+    :margin-top -20px
+
+a.male-btn:hover
+  :background
+    :image url('/images/male_btn_bg.png')
+    :repeat no-repeat
+    :position top left
+  span
+    :color #9c520b
+
+.female-figure
+  :top 24px
+  :margin-left 773px
+
+.male-figure
+  :top 24px
+  :margin-left 827px
+
+.size-select
+  :position absolute
+  :margin-left 457px
+  :top 71px
+  :font-weight bold
+  :padding
+    :top 3px
+    :bottom 3px
+  :background-color #f0f0f0
+
+#price
+  :display block
+  :width 100px
+  :height 100px
+  :position absolute
+  :margin-left 708px
+  :top 505px
+  :color= !dark_font_color
+  :font-family Georgia, Times
+  :font-size 190%
+  :text-align center
+  :line-height 120%
+  +outershadow
+  
+
+#builder
+  :position absolute
+  :width 407px
+  :margin-left 280px
+  :top 244px
+  .placeholder
+    :float left
+    :width 101px
+    :height 101px
+    :padding
+      :left 15px
+      :top 12px
+      :right 14px
+    img
+      :margin-top 1px
+      :width 101px
+      :height 100px
+  #carousels
+    :float left
+    :clear left
+    :padding
+      :top 35px
+    :width 407px
+    .carousel-container
+      :width 407px
+      :padding
+        :top 0px
+        :left 7px
+      :height 116px
+      :background transparent url('/images/carousel_bg.gif') no-repeat top left
+      .jcarousel-container
+        :margin-top 9px
+      img.hobbies-carousel-arrow
+        :position absolute
+        :margin-top -21px
+        :margin-left 40px
+      img.faces-carousel-arrow
+        :position absolute
+        :margin-top -21px
+        :margin-left 170px
+      img.jobs-carousel-arrow
+        :position absolute
+        :margin-top -21px
+        :margin-left 310px
+      h3
+        :float left
+        :margin
+          :left 2px
+          :top 88px 
+        :color= !font_color
+      img.prev-arrow
+        :position absolute
+        :cursor pointer
+        :margin
+          :left 380px
+          :top 30px
+      img.next-arrow
+        :position absolute
+        :cursor pointer
+        :margin
+          :left 389px
+          :top 30px
+      .jcarousel-item a img
+        :background-color #c5c3c4
+        
+form
+  +blueprint-form
+
+//customer form page
+.back-btn
+  :top 173px
+  :margin-left 314px
+#tee-summary
+  +noshadow
+  :color #000
+  :position absolute
+  :top 475px
+  :margin-left 705px
+  :width 188px
+  h3
+    :color= !dark_font_color
+#customer-form
+  :position absolute
+  :top 295px
+  :margin-left 377px
+  :color black
+  :font-size 120%
+  +noshadow
+  label
+    :display block
+    :height 12px
+    :margin
+      :top 2px
+      :bottom 0px
+  input
+    :clear left
+
+//checkout page
+a.submit-btn
+  :background
+    :image url('/images/submit_bg.png')
+    :repeat no-repeat
+    :position top left
+  :color= !dark_font_color
+  :padding
+    :top 5px
+  :width 200px
+  :height 54px
+  :display block
+  :font
+    :size 140%
+    :weight bold
+  :text-align center
+  :text-decoration none
+  +outerlight
+a.order-confirm-btn
+  :position absolute
+  :margin-left 500px
+  :top 450px
+a.checkout-back-btn
+  :margin-left 89px
+  :top 489px
+h1#checkout-heading
+  :position absolute
+  :margin
+    :left 355px
+    :top 20px
+#checkout-summary
+  +noshadow
+  :color #392411
+  :position absolute
+  :margin-left 170px
+  :top 240px
+  :width 300px
+#checkout-address
+  +noshadow
+  :color #392411
+  :position absolute
+  :margin-left 450px
+  :top 290px
+  span.bigger
+    :font-size 140%
+#confirmation
+  +noshadow
+  :position absolute
+  :top 515px
+  :margin-left 170px
+  :width 420px
+  :line-height 110%
+  h3
+    +noshadow
+    :color= !dark_font_color
+h1#thanks-heading
+  :position absolute
+  :margin
+    :left 205px
+    :top 300px
+#permalink
+  :font-size 120%
+  :position absolute
+  :top 360px
+  :margin-left 205px
+  a
+    +noshadow
+    :color= !dark_font_color
+.error
+  :font-size smaller
+  :color red
+p.ordered_icons 
+  +transparent
+  :background-color #c5c3c4
+  :padding 3px 0px
+.hidden
+  :display none

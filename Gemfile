@@ -9,6 +9,7 @@ gem 'thin' # or mongrel
 gem 'haml'
 gem 'mongoid'
 gem 'bson_ext', :require => "mongo"
+gem 'compass'
 
 # Test requirements
 group :test do
