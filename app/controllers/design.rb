@@ -1,4 +1,53 @@
 PadMeTee.controllers :design do
+  configure do
+    Compass.configuration do |config|
+      config.project_path = File.dirname(__FILE__)
+      config.sass_dir = File.join 'views', 'stylesheets'
+    end
+
+    set :haml, { :format => :html5 }
+    set :sass, Compass.sass_engine_options
+  end
+
+  before do
+    session['gender'] ||= 'male'
+  end
+  
+  get :index, :map => '/' do
+    render 'design/index'
+  end
+
+  get :female, :map => '/female' do
+    session['gender'] = 'female'
+    @message = I18n.t('tshirt.chosen_gender') % I18n.t('gender.female')
+    render 'design/index'
+  end
+
+  get :male, :map => '/male' do
+    session['gender'] = 'male'
+    @message = I18n.t('tshirt.chosen_gender') % I18n.t('gender.male')
+    render 'design/index'
+  end
+
+  get :icons, :map => '/icons/:id' do
+    @icon = Icon.find(params[:id])
+    session[@icon.type] = @icon
+    if request.xhr?
+      status 204
+    else
+      render 'design/index'
+    end
+  end
+  
+  get :save, :map => '/save' do
+  end
+
+  #TODO move to static controller
+  get :stylesheets, :map => '/stylesheets/:name.css' do
+    content_type 'text/css', :charset => 'utf-8'
+    sass(:"stylesheets/#{params[:name]}", Compass.sass_engine_options )
+  end
+
   # get :index, :map => "/foo/bar" do
   #   session[:foo] = "bar"
   #   render 'index'
