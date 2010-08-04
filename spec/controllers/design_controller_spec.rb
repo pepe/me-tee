@@ -1,12 +1,21 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper.rb')
 
 describe "Design controller" do
+  before(:all) do
+    #TODO mock it
+    Icon.destroy_all
+    @hobby_icon = Icon.create(:type => 'hobby', :name => 'swim', :filename => 'swim.gif')
+    @face_icon = Icon.create(:type => 'face', :name => 'angry', :filename => 'angry.gif')
+    @job_icon = Icon.create(:type => 'job', :name => 'cook', :filename => 'cook.gif')
+  end
+
   context "home page" do
     it "renders home page" do
       get '/'
       last_response.should be_ok
     end
   end
+
   context "gender pages" do
     it "has default gender in session" do
       get '/'
@@ -24,38 +33,46 @@ describe "Design controller" do
   end
 
   context "choosed icon state saving" do
-    before(:all) do
-      #TODO mock it
-      Icon.destroy_all
-      @hobby_icon = Icon.create(:type => 'hobby', :name => 'swim', :filename => 'swim.gif')
-      @face_icon = Icon.create(:type => 'face', :name => 'angry', :filename => 'angry.gif')
-      @job_icon = Icon.create(:type => 'job', :name => 'cook', :filename => 'cook.gif')
-    end
     it "saves icon for hobbies" do
       get '/icons/hobby-swim'
-      session['hobby'].should == @hobby_icon
+      session['hobby'].should == @hobby_icon.id
     end
     it "saves icon for faces" do
       get '/icons/face-angry'
-      session['face'].should == @face_icon
+      session['face'].should == @face_icon.id
     end
     it "saves icon for jobs" do
       get '/icons/job-cook'
-      session['job'].should == @job_icon
+      session['job'].should == @job_icon.id
     end
     it "returns 204 on xhr request" do
       header 'X-Requested-With', 'XMLHttpRequest'
       get '/icons/job-cook'   
       last_response.status.should == 204
-      session['job'].should == @job_icon
+      session['job'].should == @job_icon.id
     end
   end
 
-  context "design saving" do
+  context "design saving and retrieving" do
     it "save whole design" do
+      get '/icons/job-cook'
+      get '/icons/face-angry'
+      get '/icons/hobby-swim'
       get '/save'
-      last_response.should be_ok     
-      Design.should_receive(:create)
+      last_response.should be_redirect
     end
+    it "retrive saved design" do
+      @design = Design.new
+      @design.hobby = 'hobby-swim'
+      @design.face = 'face-angry'
+      @design.job = 'job-cook'
+      @design.save
+      get "/design/%s" % @design.id
+      session['hobby'].should == 'hobby-swim'
+      session['face'].should == 'face-angry'
+      session['job'].should == 'job-cook'
+      last_response.should be_ok
+    end
+    
   end
 end

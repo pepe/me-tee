@@ -31,7 +31,7 @@ PadMeTee.controllers :design do
 
   get :icons, :map => '/icons/:id' do
     @icon = Icon.find(params[:id])
-    session[@icon.type] = @icon
+    session[@icon.type] = @icon.id
     if request.xhr?
       status 204
     else
@@ -40,6 +40,22 @@ PadMeTee.controllers :design do
   end
   
   get :save, :map => '/save' do
+    @design = Design.new
+    @design.hobby = session['hobby']
+    @design.face = session['face']
+    @design.job = session['job']
+    @design.save
+    session[:message] = I18n.t('app.design_stored') % [@design.id]
+    redirect "/design/%s" % @design.id
+  end
+
+  get :design, :map => '/design/:id' do
+    @design = Design.find(params[:id])
+    @message = session.delete(:message) || I18n.t('app.design_restored')
+    session['hobby'] = @design.hobby
+    session['face'] = @design.face
+    session['job'] = @design.job
+    render 'design/index'
   end
 
   #TODO move to static controller

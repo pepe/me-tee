@@ -10,8 +10,9 @@ PadMeTee.helpers do
   
   # returns chosen icon image
   def chosen_icon_image(type, size = '')
-    if icon = session[type] || (@order && @order.document[type])
-      '<img src="/icons/%s/%s.gif" alt="%s" width="%s" height="%s" />' % [type, icon, icon, size, size]
+    if icon_id = session[type]
+      icon = Icon.find(icon_id)
+      '<img src="/icons/%s" alt="%s" width="%s" height="%s" />' % [icon.filename, icon.full_name, size, size]
     else
       "<span></span>"
     end
@@ -21,5 +22,4 @@ PadMeTee.helpers do
   def icon_image_thumb(icon)
     "<a href='/icons/%s' title='%s'><img src='%s' width='72' height='72' class='hidden' /></a>" % [icon.id, icon.full_name, icon.path]
   end
-j  
 end

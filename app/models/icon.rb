@@ -1,12 +1,14 @@
 class Icon
   include Mongoid::Document
-  include Mongoid::Timestamps # adds created_at and updated_at fields
+  include Mongoid::Timestamps
 
   field :name
   field :filename
   field :type
-  
+
   key :type, :name
+
+  belongs_to_related :design
 
   scope :hobbies, where(:type => 'hobby')
   scope :faces, where(:type => 'face')

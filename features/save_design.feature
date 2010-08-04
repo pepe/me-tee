@@ -12,4 +12,5 @@ Feature: Saving of design
     And I follow 'hobby swim'
     And I follow 'job cook'
     When I follow 'save'
-    Then I should see 'Tee how you design it'
+    Then I should see 'This is a webpage containing Your stored design. Save the url for further visit.'
+    And I should see big 'angry' icon for 'face'
