@@ -1,3 +1,4 @@
+#TODO translate to english
 Feature: Static pages
   In order to check all information
   As customer
@@ -21,5 +22,5 @@ Feature: Static pages
 
   Scenario: 
     Given I visit '/transport-payment'
-    Then I should see 'Způsob dopravy & Způsob platby'
+    Then I should see 'Transport & Payment'
 
