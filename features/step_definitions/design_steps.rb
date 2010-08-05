@@ -19,3 +19,12 @@ Given /^I visit saved design page$/ do
   Given "I visit '/design/%s'" % @design.id
 end
 
+Given /^I designed a tee$/ do
+  Given "I visit '/'"
+  And "I follow 'hobby swim'"
+  And "I follow 'face angry'"
+  And "I follow 'job cook'"
+  And "I follow 'male'"
+  And "I select 'XXL' from 'size'"
+end
+

@@ -11,9 +11,12 @@ PadMeTee.controllers :design do
 
   before do
     session['gender'] ||= 'male'
+    session['order'] ||= {}
   end
   
   get :index, :map => '/' do
+    #TODO redone messaging with flash
+    @message = session.delete('message')
     render 'design/index'
   end
 
@@ -45,13 +48,13 @@ PadMeTee.controllers :design do
     @design.face = session['face']
     @design.job = session['job']
     @design.save
-    session[:message] = I18n.t('app.design_stored') % [@design.id]
+    session['message'] = I18n.t('app.design_stored') % [@design.id]
     redirect "/design/%s" % @design.id
   end
 
   get :design, :map => '/design/:id' do
     @design = Design.find(params[:id])
-    @message = session.delete(:message) || I18n.t('app.design_restored')
+    @message = session.delete('message') || I18n.t('app.design_restored')
     session['hobby'] = @design.hobby
     session['face'] = @design.face
     session['job'] = @design.job

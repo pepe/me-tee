@@ -14,6 +14,10 @@ describe "Design controller" do
       get '/'
       last_response.should be_ok
     end
+    it 'should prepare empty session order' do
+      get '/'
+      session['order'].should == {}
+    end
   end
 
   context "gender pages" do

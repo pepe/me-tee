@@ -1,0 +1,67 @@
+%style{:type => 'text/css'}
+  body { background-image: url(images/customer_form_bg.jpg);
+%script{'type' => 'text/javascript', 'src' => '/javascripts/jquery.validate.min.js'}
+%script{'type' => 'text/javascript', 'src' => '/javascripts/validate_required.js'}
+- if @message
+  %div#message= @message 
+%div#tee-summary
+  %h1
+    = I18n.t('tshirt.how_you_designed')
+  %p
+    = I18n.t('tshirt.chosen_gender_size') % [I18n.t("gender.#{session['gender'].to_s}"), session['size']]
+  %p
+    = I18n.t('tshirt.chosen_icons')
+  %br
+  %p.ordered_icons
+    = chosen_icon_image('hobby', 60)
+    = chosen_icon_image('face', 60)
+    = chosen_icon_image('job', 60)
+  %br
+  %p
+    =I18n.t('tshirt.price') % 349
+    %br
+    =I18n.t('order.transport_czech_post') % 71
+    %br
+  %h3=I18n.t('order.total_price') % 420
+  
+%form{:id => 'order-form', :method=> 'post', :action => "/checkout"}
+  %input{:type => 'submit', 'class' => 'checkout-btn square-btn-submit', 'value' => I18n.t('commands.order')}
+  %div#customer-form
+    %h2= I18n.t('order.contact_form')
+    %label{:for => 'name'}= I18n.t('order.name')
+    &rarr;
+    %input{:type => "text", :class => 'required', :name => "name", :id => 'name', :value => session['order']['name']}
+    %br
+    %label{:for => 'street'}= I18n.t('order.street')
+    &rarr;
+    %input{:type => "text", :class => 'required', :name => "street", :id => 'street', :value => session['order']['street']}
+    %br
+    %label{:for => 'city'}= I18n.t('order.city')
+    &rarr;
+    %input{:type => "text", :class => 'required', :name => "city", :id => 'city', :size => '27', :value => session['order']['city']}
+    %br
+    %label{:for => 'zip'}= I18n.t('order.zip')
+    &rarr;
+    %input{:type => "text", :name => "zip", :id => 'zip', :size => '7', :value => session['order']['zip']}
+    %br
+    %label{:for => 'email'}= I18n.t('order.email')
+    &rarr;
+    %input{:class => 'required email', :type => "text", :name => "email", :id => 'email', :size => '27', :value => session['order']['email']}
+    %br
+    %label{:for => 'phone'}= I18n.t('order.phone')
+    &rarr;
+    %input{:type => "text", :class => 'required', :name => "phone", :id => 'phone', :size => '16', :value => session['order']['phone']}
+    %br
+    %label{:for => 'note'}= I18n.t('order.note')
+    &rarr;
+    %input{:type => "text", :name => "note", :size => '27', :id => 'note', :value => session['order']['note']}
+    %br
+    %label{:for => 'coupon'}= I18n.t('order.coupon')
+    &rarr;
+    %input{:type => "text", :name => "coupon", :size => '27', :id => 'coupon', :value => session['order']['coupon']}
+    %br
+    %br
+    %input{:type => "submit", :name => "submit", :id => "submit", :value => I18n.t('order.confirm') + ' &raquo;'}
+  
+%a{'href' => '/', 'class' => 'square-btn back-btn', 'title' => I18n.t('commands.back')}
+  %span= I18n.t('commands.back')
