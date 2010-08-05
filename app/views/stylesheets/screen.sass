@@ -1,4 +1,4 @@
-@import base.sass
+@import "base.sass"
 
 =transparent
   :filter alpha(opacity=80)
@@ -6,10 +6,10 @@
   :-khtml-opacity 0.8
   :opacity 0.8
 
-=rounded(!radius = 4px)  
-  :border-radius= !radius  
-  :-moz-border-radius= !radius  
-  :-webkit-border-radius= !radius
+=rounded($radius: 4px)  
+  border-radius: $radius  
+  -moz-border-radius: $radius  
+  -webkit-border-radius: $radius
 
 =innershadow
   :text-shadow #000 -1px -1px 0px
@@ -28,7 +28,7 @@
 
 body
   +blueprint-typography-body
-  :color= !font_color
+  color: $font_color
   :background
     :image url('/images/male_bg.jpg')
     :repeat no-repeat
@@ -41,12 +41,12 @@ h1
   :font-size 250%
   :line-height 100%
   :font-weight bold
-  :color= !dark_font_color
+  color: dark_font_color
   +outershadow
 h2
   :font-size 160%
   :font-weight bold
-  :color= !dark_font_color
+  color: dark_font_color
   +outershadow
 h3
   :font
@@ -203,7 +203,7 @@ a.male-btn:hover
   :position absolute
   :margin-left 708px
   :top 505px
-  :color= !dark_font_color
+  color: dark_font_color
   :font-family Georgia, Times
   :font-size 190%
   :text-align center
@@ -260,7 +260,7 @@ a.male-btn:hover
         :margin
           :left 2px
           :top 88px 
-        :color= !font_color
+        color: $font_color
       img.prev-arrow
         :position absolute
         :cursor pointer
@@ -274,7 +274,9 @@ a.male-btn:hover
           :left 389px
           :top 30px
       .jcarousel-item a img
+        +rounded
         :background-color #c5c3c4
+        :margin 2px 3px
         
 form
   +blueprint-form
@@ -291,7 +293,7 @@ form
   :margin-left 705px
   :width 188px
   h3
-    :color= !dark_font_color
+    color: dark_font_color
 #customer-form
   :position absolute
   :top 295px
@@ -314,7 +316,7 @@ a.submit-btn
     :image url('/images/submit_bg.png')
     :repeat no-repeat
     :position top left
-  :color= !dark_font_color
+  color: dark_font_color
   :padding
     :top 5px
   :width 200px
@@ -362,7 +364,7 @@ h1#checkout-heading
   :line-height 110%
   h3
     +noshadow
-    :color= !dark_font_color
+    color: dark_font_color
 h1#thanks-heading
   :position absolute
   :margin
@@ -375,7 +377,7 @@ h1#thanks-heading
   :margin-left 205px
   a
     +noshadow
-    :color= !dark_font_color
+    color: $dark_font_color
 .error
   :font-size smaller
   :color red
