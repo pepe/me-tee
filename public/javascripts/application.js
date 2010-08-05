@@ -74,6 +74,7 @@ $(document).ready(function(){
   $("#size").change(function(){$.get('/' + this.value)});
 
   showDefault();
+  validateRequired();
   
 });	
 
@@ -110,10 +111,6 @@ function switchCarousel(name){
 
 function hideMessage() {
   setTimeout("jQuery('#message').slideUp()", 15000)
-}
-
-function requireEmail(empty, bad) {
-$('#order-form').validate({messages: {email: {required: empty, email: bad}}})   
 }
 
 function resizeIcon(icon) {

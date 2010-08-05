@@ -21,7 +21,7 @@
   :text-shadow #ddd 1px 1px 1px
 
 =outershadow
-  :text-shadow #333 1px 1px 1px
+  :text-shadow #999 1px 1px 1px
 
 =noshadow
   :text-shadow none
@@ -279,7 +279,8 @@ a.male-btn:hover
         :margin 2px 3px
         
 form
-  +blueprint-form
+  +blueprint-form-layout
+  +blueprint-form-borders
 
 //customer form page
 .back-btn
@@ -307,8 +308,16 @@ form
     :margin
       :top 2px
       :bottom 0px
+      :left 0.5em
   input
     :clear left
+    :border none
+    :border-bottom 1px dashed black
+    :background transparent
+    :padding 3px 3px 3px 0px
+    :font-size 80%
+  input[type=submit]
+    :font-size 120%
 
 //checkout page
 a.submit-btn

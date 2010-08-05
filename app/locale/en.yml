@@ -31,7 +31,7 @@ en:
     was_chosen_icons: Customer chose icons
 
   order:
-    recapitulation: Order summary
+    recapitulatior: Order summary
     contact_form: Contact form
     name: Name
     street: Street
@@ -55,6 +55,10 @@ en:
     permalink: Order permalink
     errors:
       email: Email is empty or in bad format
+      empty_name: Name is empty
+      empty_street: Street is empty
+      empty_city: City is empty
+      empty_phone: Phone is empty
       empty_email: Email is empty
       bad_email: Email is in bad format
       all_three_required: All three icons must be choosed

@@ -1,0 +1,23 @@
+function validateRequired() {
+  $('#order-form').validate({
+    messages: {
+      email: {
+        required: '<%= I18n.t('order.errors.empty_email') %>',
+        email: '<%= I18n.t('order.errors.bad_email') %>'
+      },
+      name: {
+        required: '<%= I18n.t('order.errors.empty_name') %>'
+      },
+      street: {
+        required: '<%= I18n.t('order.errors.empty_street') %>'
+      },
+      city: {
+        required: '<%= I18n.t('order.errors.empty_city') %>'
+      },
+      phone: {
+        required: '<%= I18n.t('order.errors.empty_phone') %>'
+      }
+    }
+  })
+}
+

@@ -57,6 +57,10 @@ cz:
     permalink: Permanentní odkaz na detail objednávky
     errors:
       email: Email je prázdný nebo ve špatném formátu
+      empty_name: Jméno nesmí být prázdné
+      empty_street: Ulice nesmí být prázdná
+      empty_city: Město nesmí být prázdné
+      empty_phone: Telefon nesmí být prázdný
       empty_email: Email nesmí být prázdný
       bad_email: Email musí být ve správném formátu
       all_three_required: Musíte vybrat všechny tři ikony

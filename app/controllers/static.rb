@@ -33,4 +33,8 @@ PadMeTee.controllers :static do
     redirect '/'
   end
 
+  get :validate_js, :map => '/javascripts/validate_required.js' do
+    render 'javascripts/validate_required'
+  end
+
 end
