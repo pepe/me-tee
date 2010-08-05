@@ -45,4 +45,14 @@ describe Icon do
       Icon.jobs.should == [icon]
     end
   end
+
+  context 'random' do
+    it 'should get random icon for type' do
+      %(swim voley read).each do |icon|
+        Icon.create(:name => icon, :type => 'hobby', :filename => "#{icon}.gif")
+      end
+      Icon.create(:name => 'angry', :type => 'face', :filename => "angry.gif")
+      5.times {Icon.random('hobby').should =~ /hobby-.*/}
+    end
+  end
 end

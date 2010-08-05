@@ -58,6 +58,13 @@ PadMeTee.controllers :design do
     render 'design/index'
   end
 
+  get :random, :map => '/random' do
+    session['hobby'] = Icon.random('hobby')
+    session['face'] = Icon.random('face')
+    session['job'] = Icon.random('job')
+    render "design/index"
+  end
+
   #TODO move to static controller
   get :stylesheets, :map => '/stylesheets/:name.css' do
     content_type 'text/css', :charset => 'utf-8'

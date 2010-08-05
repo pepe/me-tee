@@ -53,7 +53,7 @@ describe "Design controller" do
     end
   end
 
-  context "design saving and retrieving" do
+  context "design saving, retrieving and randomizing" do
     it "save whole design" do
       get '/icons/job-cook'
       get '/icons/face-angry'
@@ -73,6 +73,13 @@ describe "Design controller" do
       session['job'].should == 'job-cook'
       last_response.should be_ok
     end
-    
+    it 'randomizes design' do
+      get '/random'
+      last_response.should be_ok
+      session['hobby'].should == 'hobby-swim'
+      session['face'].should == 'face-angry'
+      session['job'].should == 'job-cook'
+    end
+
   end
 end

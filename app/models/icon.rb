@@ -23,4 +23,12 @@ class Icon
   def full_name
     @full_name ||= "%s %s" % [type, name]
   end
+
+  class << self
+    # returns random icon id by type
+    def random(type)
+      Icon.only(:id).where(:type => type).map(&:id).random_element
+    end
+
+  end
 end
