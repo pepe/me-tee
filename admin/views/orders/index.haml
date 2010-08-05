@@ -1,0 +1,53 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:orders, :index)
+      %li=link_to pat(:new), url(:orders, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:order)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:order, :hobby)
+          %th=mat(:order, :city)
+          %th=mat(:order, :name)
+          %th=mat(:order, :size)
+          %th=mat(:order, :coupon)
+          %th=mat(:order, :zip)
+          %th=mat(:order, :created_at)
+          %th=mat(:order, :updated_at)
+          %th=mat(:order, :gender)
+          %th=mat(:order, :street)
+          %th=mat(:order, :job)
+          %th=mat(:order, :note)
+          %th=mat(:order, :phone)
+          %th=mat(:order, :face)
+          %th=mat(:order, :email)
+          %th.last="&nbsp;"
+        -@orders.each do |order|
+          %tr
+            %td.first=order.hobby
+            %td=order.city
+            %td=order.name
+            %td=order.size
+            %td=order.coupon
+            %td=order.zip
+            %td=order.created_at
+            %td=order.updated_at
+            %td=order.gender
+            %td=order.street
+            %td=order.job
+            %td=order.note
+            %td=order.phone
+            %td=order.face
+            %td=order.email
+            %td.last
+              =button_to pat(:edit), url(:orders, :edit, :id => order.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:orders, :destroy, :id => order.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

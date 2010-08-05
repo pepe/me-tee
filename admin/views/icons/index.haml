@@ -1,0 +1,35 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:icons, :index)
+      %li=link_to pat(:new), url(:icons, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:icon)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:icon, :name)
+          %th=mat(:icon, :created_at)
+          %th=mat(:icon, :updated_at)
+          %th=mat(:icon, :type)
+          %th=mat(:icon, :filename)
+          %th=mat(:icon, :design_id)
+          %th.last="&nbsp;"
+        -@icons.each do |icon|
+          %tr
+            %td.first=icon.name
+            %td=icon.created_at
+            %td=icon.updated_at
+            %td=icon.type
+            %td=icon.filename
+            %td=icon.design_id
+            %td.last
+              =button_to pat(:edit), url(:icons, :edit, :id => icon.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:icons, :destroy, :id => icon.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

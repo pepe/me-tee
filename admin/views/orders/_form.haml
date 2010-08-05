@@ -1,0 +1,82 @@
+.group
+  =f.label :hobby
+  =f.error_message_on :hobby
+  =f.text_field :hobby, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :city
+  =f.error_message_on :city
+  =f.text_field :city, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :name
+  =f.error_message_on :name
+  =f.text_field :name, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :size
+  =f.error_message_on :size
+  =f.text_field :size, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :coupon
+  =f.error_message_on :coupon
+  =f.text_field :coupon, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :zip
+  =f.error_message_on :zip
+  =f.text_field :zip, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :gender
+  =f.error_message_on :gender
+  =f.text_field :gender, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :street
+  =f.error_message_on :street
+  =f.text_field :street, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :job
+  =f.error_message_on :job
+  =f.text_field :job, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :note
+  =f.error_message_on :note
+  =f.text_field :note, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :phone
+  =f.error_message_on :phone
+  =f.text_field :phone, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :face
+  =f.error_message_on :face
+  =f.text_field :face, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :email
+  =f.error_message_on :email
+  =f.text_field :email, :class => :text_field
+  %span.description Ex: a simple text
+
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:orders, :index)}';return false", :class => :button
