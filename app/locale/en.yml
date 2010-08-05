@@ -31,7 +31,7 @@ en:
     was_chosen_icons: Customer chose icons
 
   order:
-    recapitulatior: Order summary
+    recapitulation: Order summary
     contact_form: Contact form
     name: Name
     street: Street
@@ -50,8 +50,9 @@ en:
     payment: Payment
     transport_payment: Transport &amp; Payment
     payment_info: We accept bank transfer payments.
-    confirmation_info: Clicking on link ORDER CONFIRMATION, you agree with bussiness conditions of me-tee service and mandate order how you designed and configured.
-    confirmation: ORDER CONFIRMATION
+    confirmation_info: Clicking on link CONFIRM ORDER, you agree with bussiness conditions of me-tee service and mandate order how you designed and configured.
+    confirmation: CONFIRM ORDER
+    thank_you: Thank you for your order!
     permalink: Order permalink
     errors:
       email: Email is empty or in bad format
@@ -72,6 +73,7 @@ en:
     back: back
     random: random
     order: order
+    home: HOME
 
   mail:
     subject: Your order of me-tee was succesful

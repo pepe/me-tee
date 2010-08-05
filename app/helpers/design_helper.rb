@@ -10,7 +10,7 @@ PadMeTee.helpers do
   
   # returns chosen icon image
   def chosen_icon_image(type, size = '')
-    if icon_id = session[type]
+    if icon_id = (session[type] || @order.try(type))
       icon = Icon.find(icon_id)
       '<img src="/icons/%s" alt="%s" width="%s" height="%s" />' % [icon.filename, icon.full_name, size, size]
     else

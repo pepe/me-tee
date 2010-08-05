@@ -1,0 +1,43 @@
+%style{:type => 'text/css'}
+  body { background-image: url(images/checkout_bg.jpg);
+%h1#checkout-heading=I18n.t('order.recapitulation')
+%div#checkout-summary
+  %h3= I18n.t('tshirt.how_you_designed')
+  %p
+    = I18n.t('tshirt.chosen_gender_size') % [I18n.t("gender.#{session['gender'].to_s}"), session['size']]
+    %br
+    = I18n.t('tshirt.chosen_icons')
+    %br
+    = chosen_icon_image('hobby', 60)
+    = chosen_icon_image('face', 60)
+    = chosen_icon_image('job', 60)
+    %br
+    =I18n.t('tshirt.price') % 349
+    %br
+    =I18n.t('order.transport_czech_post') % 71
+    %br
+  %h3=I18n.t('order.total_price') % 420
+%div#checkout-address
+  %h3=I18n.t('order.address')
+  %span.bigger=session['order']['name']
+  %br
+  = session['order']['street']
+  %br
+  = session['order']['city'] 
+  %br
+  %span.bigger= session['order']['zip'] 
+  %br
+  = session['order']['email']
+  %br
+  = session['order']['phone']
+  %br
+  = session['order']['note']
+  %br
+  = session['order']['coupon']
+%div#confirmation
+  = I18n.t('order.confirmation_info')
+
+%a{'href' => '/confirm', 'title' => I18n.t('order.confirmation'), :class => 'submit-btn order-confirm-btn', :id => 'order_confirmation', :onclick => 'javascript:$("#order_confirmation").hide();'}= I18n.t('order.confirmation')
+
+%a{'href' => '/order', 'class' => 'square-btn checkout-back-btn', 'title' => I18n.t('commands.back')}
+  %span=I18n.t('commands.back')

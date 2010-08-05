@@ -1,0 +1,34 @@
+%style{:type => 'text/css'}
+  body { background-image: url(/images/checkout_bg.jpg);
+%h1#checkout-heading=I18n.t('order.recapitulation')
+%div#checkout-summary
+  %h3= I18n.t('tshirt.how_was_designed')
+  %p
+    = I18n.t('tshirt.was_chosen_gender_size') % [I18n.t("gender.#{@order.gender.to_s}"), @order.size]
+    %br
+    = I18n.t('tshirt.was_chosen_icons')
+    %br
+    = chosen_icon_image('hobby', 60)
+    = chosen_icon_image('face', 60)
+    = chosen_icon_image('job', 60)
+%div#checkout-address
+  %h3=I18n.t('order.address')
+  %span.bigger=@order.name
+  %br
+  = @order.street
+  %br
+  = @order.city 
+  %br
+  %span.bigger= @order.zip 
+  %br
+  = @order.email
+  %br
+  = @order.phone
+  %br
+  = @order.note
+  %br
+  = @order.coupon
+
+%a{'href' => '/', 'class' => 'square-btn checkout-back-btn', 'title' => I18n.t('commands.home')}
+  %span=I18n.t('commands.home')
+

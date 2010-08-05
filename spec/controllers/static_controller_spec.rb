@@ -38,7 +38,7 @@ describe "StaticController" do
     I18n.locale.should == :cz
   end
   it 'renders validation javascript' do
-    get '/javascript/validate_required.js'
+    get '/javascripts/validate_required.js'
     last_response.should be_ok
   end
 end

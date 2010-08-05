@@ -1,0 +1,8 @@
+%style{:type => 'text/css'}
+  body { background-image: url(images/checkout_bg.jpg);
+%h1#thanks-heading=I18n.t('order.thank_you')
+%div#permalink
+  %a{:href => @permalink}= I18n.t('order.permalink')
+
+%a{'href' => '/', 'class' => 'square-btn checkout-back-btn', 'title' => I18n.t('commands.home')}
+  %span=I18n.t('commands.home')
