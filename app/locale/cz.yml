@@ -1,0 +1,79 @@
+cz:
+  app:
+    title: me-tee triko o tobě
+    design_stored: "<a href='/%s'>Toto</a> je stránka s Vaším uloženým designem. Uložte si ji pro další zobrazení."
+    design_restored: "Váš výběr byl obnoven"
+    business_conditions: "Obchodní podmínky"
+    how_to_buy: "Jak nakupovat"
+    contact: "Kontakt"
+    privacy: "Ochrana dat a soukromí"
+    
+
+  icon:
+    name: název
+    chosen_hobby: Vybráno hobby %s
+    chosen_job: Vybráno zaměstnání %s
+    chosen_face: Vybrána tvář %s
+    hobbies: Obrázky hobby
+    faces: Obrázky tváří
+    jobs: Obrázky zaměstnání
+
+  tshirt:
+    size: velikost
+    price: Cena %s,- Kč
+    change_size: změň velikost
+    how_you_designed: Triko tak jak jste si ho sestavili
+    chosen_gender_size: Vybrali jste %s triko ve velikosti <strong>%s</strong>
+    chosen_gender: Vybrali jste <strong>%s</strong> triko
+    chosen_size: Vybrali jste velikost <strong>%s</strong>
+    chosen_icons: Vybrali jste ikony
+    how_was_designed: Triko jak bylo sestaveno
+    was_chosen_gender_size: Zákazník vybral <strong>%s</strong> triko ve velikosti %s
+    was_chosen_icons: Zákazník vybral ikony
+
+  order:
+    recapitulation: Rekapitulace objednávky trika
+    contact_form: Kontaktní formulář
+    name: Jméno
+    street: Ulice
+    city: Město
+    zip: PSČ
+    email: Email
+    phone: Telefon
+    note: Poznámka
+    coupon: Slevový kupón
+    confirm: Pokračovat v objednávce
+    transport_czech_post: Doprava - Česká Pošta <strong>%s,- Kč</strong>
+    total_price: Cena celkem <strong>%s,- Kč</strong>
+    address: Adresa
+    transport: Způsob dopravy
+    transport_info: Trička jsou expedována KAŽDÝ PÁTEK. K dopravě využíváme služeb České pošty. CENA DOPRAVY je %s,- Kč.
+    payment: Způsob platby
+    transport_payment: Platba &amp; Doručení
+    payment_info: Způsob platby je dobírkou - tedy hotově při převzetí zboží od dopravce.
+    confirmation_info: Po kliknutí na odkaz POTVRZENÍ OBJEDNÁVKY vyjadřujete souhlas s&nbsp;obchodními podmínkami internetového obchodu me-tee a závazně objednáváte zboží tak jak jste si ho vytvořil a nakonfigurovali.
+    confirmation: DOKONČIT OBJEDNÁVKU
+    thank_you: Děkujeme za objednávku!
+    permalink: Permanentní odkaz na detail objednávky
+    errors:
+      email: Email je prázdný nebo ve špatném formátu
+      empty_email: Email nesmí být prázdný
+      bad_email: Email musí být ve správném formátu
+      all_three_required: Musíte vybrat všechny tři ikony
+
+  gender:
+    male: pánské
+    female: dámské
+
+  commands:
+    save: uložit
+    back: zpět
+    random:  náhodné
+    order: objednat
+    home: HOME
+
+  mail:
+    subject: Vaše objednávka trika me-tee byla úspěšná
+    body: Vážený zákazníku,\nTímto emailem potvrzujeme, že jsme přijali Vaši objednávku k vyřízení.\nVeškeré detaily o objednaném triku mužete vidět na této adrese %s\nV případě jakýchkoliv dotazů nás kontaktujte na emailové adrese info@me-tee.cz\nVáš tým me-tee.cz
+
+
