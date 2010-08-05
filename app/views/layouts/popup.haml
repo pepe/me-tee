@@ -1,0 +1,8 @@
+%html
+  %head
+    %title=I18n.t('app.title')
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}
+    %link{ 'rel' => 'stylesheet' , 'href' => '/stylesheets/popup.css' , 'media' => 'screen' , 'type' => 'text/css'}
+  %body
+    #container
+      = yield

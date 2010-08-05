@@ -64,31 +64,4 @@ PadMeTee.controllers :design do
     session['job'] = Icon.random('job')
     render "design/index"
   end
-
-  #TODO move to static controller
-  get :stylesheets, :map => '/stylesheets/:name.css' do
-    content_type 'text/css', :charset => 'utf-8'
-    sass(:"stylesheets/#{params[:name]}", Compass.sass_engine_options )
-  end
-
-  # get :index, :map => "/foo/bar" do
-  #   session[:foo] = "bar"
-  #   render 'index'
-  # end
-
-  # get :sample, :map => "/sample/url", :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
-
-  # get :foo, :with => :id do
-  #   "Maps to url '/foo/#{params[:id]}'"
-  # end
-
-  # get "/example" do
-  #   "Hello world!"
-  # end
-
-  
 end
