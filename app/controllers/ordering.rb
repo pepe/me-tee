@@ -16,7 +16,7 @@ PadMeTee.controllers :ordering do
 
   post :checkout, :map => '/checkout' do
     session['order'] = {
-      'name' => params['name'],
+      'fullname' => params['fullname'],
       'street' => params['street'],
       'city' => params['city'],
       'zip' => params['zip'],

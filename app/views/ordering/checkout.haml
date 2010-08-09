@@ -19,7 +19,7 @@
   %h3=I18n.t('order.total_price') % 420
 %div#checkout-address
   %h3=I18n.t('order.address')
-  %span.bigger=session['order']['name']
+  %span.bigger=session['order']['fullname']
   %br
   = session['order']['street']
   %br

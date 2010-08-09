@@ -2,11 +2,11 @@ class Icon
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :name
+  field :label
   field :filename
   field :type
 
-  key :type, :name
+  key :type, :label
 
   belongs_to_related :design
 
@@ -21,7 +21,7 @@ class Icon
 
   # returns full name with type
   def full_name
-    @full_name ||= "%s %s" % [type, name]
+    @full_name ||= "%s %s" % [type, label]
   end
 
   class << self

@@ -4,9 +4,9 @@ describe "Design controller" do
   before(:all) do
     #TODO mock it
     Icon.destroy_all
-    @hobby_icon = Icon.create(:type => 'hobby', :name => 'swim', :filename => 'swim.gif')
-    @face_icon = Icon.create(:type => 'face', :name => 'angry', :filename => 'angry.gif')
-    @job_icon = Icon.create(:type => 'job', :name => 'cook', :filename => 'cook.gif')
+    @hobby_icon = Icon.create(:type => 'hobby', :label => 'swim', :filename => 'swim.gif')
+    @face_icon = Icon.create(:type => 'face', :label => 'angry', :filename => 'angry.gif')
+    @job_icon = Icon.create(:type => 'job', :label => 'cook', :filename => 'cook.gif')
   end
 
   context "home page" do

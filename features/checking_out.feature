@@ -9,7 +9,7 @@ Feature: Checkout
   Scenario: Checking out
     Given I designed a tee
     And I press 'order'
-    And I fill in 'Joe Doe' for 'name'
+    And I fill in 'Joe Doe' for 'fullname'
     And I fill in 'Pool 1' for 'street'
     And I fill in 'Prague' for 'city'
     And I fill in '11150' for 'zip'
@@ -34,7 +34,7 @@ Feature: Checkout
   Scenario: Checking out
     Given I designed a tee
     And I press 'order'
-    And I fill in 'Joe Doe' for 'name'
+    And I fill in 'Joe Doe' for 'fullname'
     And I fill in 'Pool 1' for 'street'
     And I fill in 'Prague' for 'city'
     And I fill in '11150' for 'zip'

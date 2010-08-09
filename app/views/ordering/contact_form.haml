@@ -28,9 +28,9 @@
   %input{:type => 'submit', 'class' => 'checkout-btn square-btn-submit', 'value' => I18n.t('commands.order')}
   %div#customer-form
     %h2= I18n.t('order.contact_form')
-    %label{:for => 'name'}= I18n.t('order.name')
+    %label{:for => 'fullname'}= I18n.t('order.fullname')
     &rarr;
-    %input{:type => "text", :class => 'required', :name => "name", :id => 'name', :value => session['order']['name']}
+    %input{:type => "text", :class => 'required', :name => "fullname", :id => 'fullname', :value => session['order']['fullname']}
     %br
     %label{:for => 'street'}= I18n.t('order.street')
     &rarr;

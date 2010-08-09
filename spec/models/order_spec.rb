@@ -6,7 +6,7 @@ describe "Order Model" do
   end
   it 'validates presence of fields' do
     Order.new(
-      'name' => 'x',
+      'fullname' => 'x',
       'street' => 'a',
       'city' => 'b',
       'email' => 'e@co.cz',

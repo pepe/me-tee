@@ -4,9 +4,9 @@ describe "OrderingController" do
   before(:all) do
     #TODO mock it
     Icon.destroy_all
-    @hobby_icon = Icon.create(:type => 'hobby', :name => 'swim', :filename => 'swim.gif')
-    @face_icon = Icon.create(:type => 'face', :name => 'angry', :filename => 'angry.gif')
-    @job_icon = Icon.create(:type => 'job', :name => 'cook', :filename => 'cook.gif')
+    @hobby_icon = Icon.create(:type => 'hobby', :label => 'swim', :filename => 'swim.gif')
+    @face_icon = Icon.create(:type => 'face', :label => 'angry', :filename => 'angry.gif')
+    @job_icon = Icon.create(:type => 'job', :label => 'cook', :filename => 'cook.gif')
   end
   it 'returns to home when not all three pictures choosen' do
     post '/order'
@@ -28,13 +28,13 @@ describe "OrderingController" do
     get '/icons/job-cook'
     post '/order', :size => 'M'
     post '/checkout',
-      'name' => 'x',
+      'fullname' => 'x',
       'street' => 'a',
       'city' => 'b',
       'email' => 'e@co.cz',
       'phone' => 'p'
     last_response.should be_ok
-    session['order']['name'].should == 'x'
+    session['order']['fullname'].should == 'x'
     session['order']['street'].should == 'a'
     session['order']['city'].should == 'b'
     session['order']['email'].should == 'e@co.cz'
@@ -46,7 +46,7 @@ describe "OrderingController" do
     get '/icons/job-cook'
     post '/order', :size => 'M'
     post '/checkout',
-      'name' => 'x',
+      'fullname' => 'x',
       'street' => 'a',
       'city' => 'b',
       'email' => 'e@co.cz',
@@ -58,7 +58,7 @@ describe "OrderingController" do
   end
   it 'prints out order info' do
     order = Order.create(
-      'name' => 'x',
+      'fullname' => 'x',
       'street' => 'a',
       'city' => 'b',
       'email' => 'e@co.cz',

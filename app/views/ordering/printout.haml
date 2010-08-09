@@ -13,7 +13,7 @@
     = chosen_icon_image('job', 60)
 %div#checkout-address
   %h3=I18n.t('order.address')
-  %span.bigger=@order.name
+  %span.bigger=@order.fullname
   %br
   = @order.street
   %br

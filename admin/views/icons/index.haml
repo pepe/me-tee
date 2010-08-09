@@ -10,18 +10,16 @@
     .inner
       %table.table
         %tr
-          %th.first=mat(:icon, :name)
-          %th=mat(:icon, :created_at)
-          %th=mat(:icon, :updated_at)
+          %th.first=mat(:icon, :label)
+          %th=t('models.icon.image')
           %th=mat(:icon, :type)
           %th=mat(:icon, :filename)
           %th=mat(:icon, :design_id)
           %th.last="&nbsp;"
         -@icons.each do |icon|
           %tr
-            %td.first=icon.name
-            %td=icon.created_at
-            %td=icon.updated_at
+            %td.first=icon.label
+            %td=image_tag("/icons/#{icon.filename}")
             %td=icon.type
             %td=icon.filename
             %td=icon.design_id

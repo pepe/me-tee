@@ -2,7 +2,7 @@ class Order
   include Mongoid::Document
   include Mongoid::Timestamps # adds created_at and updated_at fields
 
-  field :name
+  field :fullname
   field :street
   field :city
   field :zip
@@ -16,7 +16,7 @@ class Order
   field :gender
   field :size
   
-  validates_presence_of :email, :name, :street, :city, :phone, :hobby, :face,
+  validates_presence_of :email, :fullname, :street, :city, :phone, :hobby, :face,
     :job, :gender, :size
 
 end

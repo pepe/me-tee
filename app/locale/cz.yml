@@ -10,7 +10,7 @@ cz:
     
 
   icon:
-    name: název
+    label: název
     chosen_hobby: Vybráno hobby %s
     chosen_job: Vybráno zaměstnání %s
     chosen_face: Vybrána tvář %s
@@ -34,7 +34,7 @@ cz:
   order:
     recapitulation: Rekapitulace objednávky trika
     contact_form: Kontaktní formulář
-    name: Jméno
+    fullname: Jméno
     street: Ulice
     city: Město
     zip: PSČ
@@ -57,7 +57,7 @@ cz:
     permalink: Permanentní odkaz na detail objednávky
     errors:
       email: Email je prázdný nebo ve špatném formátu
-      empty_name: Jméno nesmí být prázdné
+      empty_fullname: Jméno nesmí být prázdné
       empty_street: Ulice nesmí být prázdná
       empty_city: Město nesmí být prázdné
       empty_phone: Telefon nesmí být prázdný
@@ -81,3 +81,20 @@ cz:
     body: Vážený zákazníku,\nTímto emailem potvrzujeme, že jsme přijali Vaši objednávku k vyřízení.\nVeškeré detaily o objednaném triku mužete vidět na této adrese %s\nV případě jakýchkoliv dotazů nás kontaktujte na emailové adrese info@me-tee.cz\nVáš tým me-tee.cz
 
 
+  models:
+    order:
+      name: Objednávka
+      fullname: Jméno
+      street: Ulice
+      city: Město
+      zip: PSČ
+      email: Email
+      phone: Telefon
+      note: Poznámka
+      coupon: Slevový kupón
+    icon:
+      name: Ikona
+      label: Název
+      image: Obrázek
+      type: Druh
+      filename: Soubor

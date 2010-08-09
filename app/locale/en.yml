@@ -9,7 +9,7 @@ en:
     privacy: "Privacy"
 
   icon:
-    name: name
+    label: name
     chosen_hobby: Chosen hobby %s
     chosen_job: Chosen job %s
     chosen_face: Chosen face %s
@@ -33,7 +33,7 @@ en:
   order:
     recapitulation: Order summary
     contact_form: Contact form
-    name: Name
+    fullname: Full Name
     street: Street
     city: City
     zip: ZIP

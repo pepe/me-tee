@@ -1,8 +1,8 @@
 Given /^there are icons in system$/ do
   Icon.destroy_all
-  Icon.create(:type => 'hobby', :name => 'swim', :filename => 'swim.gif')
-  Icon.create(:type => 'face', :name => 'angry', :filename => 'angry.gif')
-  Icon.create(:type => 'job', :name => 'cook', :filename => 'cook.gif')
+  Icon.create(:type => 'hobby', :label => 'swim', :filename => 'swim.gif')
+  Icon.create(:type => 'face', :label => 'angry', :filename => 'angry.gif')
+  Icon.create(:type => 'job', :label => 'cook', :filename => 'cook.gif')
 end
 
 Then /^I should see big '(.+)' icon for '(.+)'$/ do |icon, type|
@@ -31,7 +31,7 @@ end
 Given /^I ordered tee as usual$/ do
   Given "I designed a tee"
   And "I press 'order'"
-  And "I fill in 'Joe Doe' for 'name'"
+  And "I fill in 'Joe Doe' for 'fullname'"
   And "I fill in 'Pool 1' for 'street'"
   And "I fill in 'Prague' for 'city'"
   And "I fill in '11150' for 'zip'"

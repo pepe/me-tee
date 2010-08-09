@@ -10,7 +10,7 @@ Feature: Filling contact form
     Given I designed a tee
     When I press 'order'
     Then I should see 'Contact form'
-    And I could fill in 'Joe Doe' for 'name'
+    And I could fill in 'Joe Doe' for 'fullname'
     And I could fill in 'Pool 1' for 'street'
     And I could fill in 'Prague' for 'city'
     And I could fill in '11150' for 'zip'
