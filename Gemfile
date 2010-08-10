@@ -10,6 +10,8 @@ gem 'haml'
 gem 'mongoid'
 gem 'bson_ext', :require => "mongo"
 gem 'compass'
+gem 'vlad'
+gem 'vlad-git'
 
 # Test requirements
 group :test do
@@ -20,7 +22,6 @@ group :test do
   gem 'capybara'
   gem 'rack-test', :require => 'rack/test', :group => 'test'
   gem 'autotest'
-  gem 'autotest-fsevent'
 end
 
 
