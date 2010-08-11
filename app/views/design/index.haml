@@ -31,16 +31,16 @@
   %div#placeholders
     %div{:class => 'placeholder', :id => 'hobbies-placeholder'}
       =chosen_icon_image('hobby')
+      %h4=I18n.t('models.icon.hobby')
     %div{:class => 'placeholder', :id => 'faces-placeholder'}
       =chosen_icon_image('face')
+      %h4=I18n.t('models.icon.face')
     %div{:class => 'placeholder', :id => 'jobs-placeholder'}
       =chosen_icon_image('job')
+      %h4=I18n.t('models.icon.job')
       
-  %div#carousels
-    %div.carousel-container
-      %img{:src => '/images/carousel_top_arrow.gif', :class => 'hobbies-carousel-arrow', :alt => ''}
-      %img{:src => '/images/carousel_top_arrow.gif', :class => 'faces-carousel-arrow', :alt => ''}
-      %img{:src => '/images/carousel_top_arrow.gif', :class => 'jobs-carousel-arrow', :alt => ''}
+  #carousels
+    .carousel-container
       %div#hobbies-carousel-container
         %ul{:id => 'hobbies-carousel'}
           - Icon.hobbies.each do |icon| 
@@ -53,9 +53,9 @@
         %ul{:id => 'jobs-carousel'}
           - Icon.jobs.each do |icon| 
             %li= icon_image_thumb(icon) 
-      %h3{:id => 'hobbies-carousel-title'}=I18n.t('icon.hobbies')
-      %h3{:id => 'faces-carousel-title'}=I18n.t('icon.faces')
-      %h3{:id => 'jobs-carousel-title'}=I18n.t('icon.jobs')
+      %h4{:id => 'hobbies-carousel-title'}=I18n.t('icon.hobbies')
+      %h4{:id => 'faces-carousel-title'}=I18n.t('icon.faces')
+      %h4{:id => 'jobs-carousel-title'}=I18n.t('icon.jobs')
 -if @beta_box
   %a{:href => '/intro?iframe=true&width=600&height=400', :id => 'startup', :rel => 'lightbox[footnavig]', :title => I18n.t('app.intro'), :class => 'hidden'}
 
