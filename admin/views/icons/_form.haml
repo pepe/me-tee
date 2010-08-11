@@ -16,13 +16,6 @@
   =f.text_field :filename, :class => :text_field
   %span.description Ex: a simple text
 
-.group
-  =f.label :design_id
-  =f.error_message_on :design_id
-  =f.text_field :design_id, :class => :text_field
-  %span.description Ex: a simple text
-
-
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button
   =f.submit pat(:cancel), :onclick => "window.location='#{url(:icons, :index)}';return false", :class => :button

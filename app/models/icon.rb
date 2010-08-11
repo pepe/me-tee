@@ -8,8 +8,6 @@ class Icon
 
   key :type, :label
 
-  belongs_to_related :design
-
   scope :hobbies, where(:type => 'hobby')
   scope :faces, where(:type => 'face')
   scope :jobs, where(:type => 'job')

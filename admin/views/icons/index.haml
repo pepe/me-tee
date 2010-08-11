@@ -14,7 +14,6 @@
           %th=t('models.icon.image')
           %th=mat(:icon, :type)
           %th=mat(:icon, :filename)
-          %th=mat(:icon, :design_id)
           %th.last="&nbsp;"
         -@icons.each do |icon|
           %tr
@@ -22,7 +21,6 @@
             %td=image_tag("/icons/#{icon.filename}")
             %td=icon.type
             %td=icon.filename
-            %td=icon.design_id
             %td.last
               =button_to pat(:edit), url(:icons, :edit, :id => icon.id), :method => :get, :class => :button_to
               ="|"
