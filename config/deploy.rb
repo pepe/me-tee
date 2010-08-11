@@ -7,7 +7,7 @@ set :revision, "origin/deploy"
 # (see below).
 #
 set :user, "deploy"
-set :domain, "deploy@ruby.czu.cz"
+set :domain, "deploy@fina.laststar.eu"
 
 set :deploy_to, "/var/apps/#{application}"
 
@@ -22,9 +22,14 @@ namespace :vlad do
   remote_task :bundle_install do
     run %{cd #{current_path} && RB_USER_INSTALL="1" bundle install}
   end
+
+  remote_task :link_icons do
+    run %{cd #{current_path} && ln -s #{shared_path}/icons/*.gif public/icons/}
+  end
   
   task :update do
     Rake::Task["vlad:bundle_install"].invoke
+    Rake::Task["vlad:link_icons"].invoke
   end
 
   # Depending on how you host Nesta, you might want to swap :start_app
