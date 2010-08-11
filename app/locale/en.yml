@@ -2,7 +2,7 @@ en:
   app:
     design_restored: Your design has been restored
     title: me-tee t-shirt about you
-    design_stored: "<a href='/design/%s'>This</a> is a webpage containing Your stored design. Save the url for further visit."
+    design_stored: "<a href='%s'>This</a> is a webpage containing Your stored design. Save the url for further visit."
     business_conditions: "Business conditions"
     how_to_buy: "How to buy"
     contact: "Contact us"

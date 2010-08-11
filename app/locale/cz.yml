@@ -1,7 +1,7 @@
 cz:
   app:
     title: me-tee triko o tobě
-    design_stored: "<a href='/%s'>Toto</a> je stránka s Vaším uloženým designem. Uložte si ji pro další zobrazení."
+    design_stored: "<a href='%s'>Toto</a> je stránka s Vaším uloženým designem. Uložte si ji pro další zobrazení."
     design_restored: "Váš výběr byl obnoven"
     business_conditions: "Obchodní podmínky"
     how_to_buy: "Jak nakupovat"
@@ -98,3 +98,7 @@ cz:
       image: Obrázek
       type: Druh
       filename: Soubor
+      hobby: Hobby
+      face: Tvář
+      job: Práce
+      

@@ -48,8 +48,9 @@ PadMeTee.controllers :design do
     @design.face = session['face']
     @design.job = session['job']
     @design.save
-    session['message'] = I18n.t('app.design_stored') % [@design.id]
-    redirect "/design/%s" % @design.id
+    @url = "/design/%s" % @design.id
+    session['message'] = I18n.t('app.design_stored') % @url
+    redirect @url
   end
 
   get :design, :map => '/design/:id' do

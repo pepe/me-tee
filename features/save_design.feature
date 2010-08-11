@@ -14,3 +14,12 @@ Feature: Saving of design
     When I follow 'save'
     Then I should see 'This is a webpage containing Your stored design. Save the url for further visit.'
     And I should see big 'angry' icon for 'face'
+
+  Scenario: Saved design link
+    Given I visit '/'
+    And I follow 'face angry'
+    And I follow 'hobby swim'
+    And I follow 'job cook'
+    And I follow 'save'
+    When I follow 'This'
+    Then I should see 'Your design has been restored'
